@@ -1,15 +1,26 @@
 <div style="padding: 20px">
   <h1>Animation Angular</h1>
-  <button mat-raised-button color="accent">Animer une fois</button>
-  <button mat-raised-button color="accent">Animer en boucle</button>
-  <div class="square" style="background-color: red;"></div>
+  <!-- Bouton pour animer une seule fois les carrés -->
+  <button mat-raised-button color="accent" (click)="bounceShakeFlip()">Animer une fois</button>
+  
+  <!-- Bouton pour animer les carrés en boucle -->
+  <button mat-raised-button color="accent" (click)="playLoop()">Animer en boucle</button>
 
-  <div class="square" style="background-color: green;"></div>
+  <!-- Carré rouge animé avec l'animation shake -->
+  <div class="square" [@shake]="ng_shake" style="background-color: red;"></div>
 
-  <div class="square" style="background-color: blue;"></div>
+  <!-- Carré vert animé avec l'animation bounce -->
+  <div class="square" [@bounce]="ng_bounce" style="background-color: green;"></div>
+
+  <!-- Carré bleu animé avec l'animation tada -->
+  <div class="square" [@tada]="ng_tada" style="background-color: blue;"></div>
 </div>
+
 <div style="padding: 20px">
   <h1>Animation CSS</h1>
-  <button mat-raised-button color="accent">Faire tourner</button>
-  <div class="square" style="background-color:orange;"></div>
+  <!-- Bouton pour faire tourner le carré orange -->
+  <button mat-raised-button color="accent " (click)="rotatecss()">Faire tourner</button>
+
+  <!-- Carré orange animé avec une animation CSS de rotation -->
+  <div class="square" [class.rotate-left]="css_rotate" style="background-color: orange;"></div>
 </div>
